@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Level Up</string>
+    <string name="title_item_detail">Movie Detail</string>
+    <string name="news">News</string>
+    <string name="upcoming_releases">Upcoming Releases</string>
+    <string name="up">UP</string>
+    <string name="level">LEVEL</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
