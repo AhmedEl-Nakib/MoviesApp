@@ -28,7 +28,12 @@ class MoviesList : Fragment(), MoviesAdapter.Interaction {
         // Inflate the layout for this fragment
         binding = FragmentMoviesListBinding.inflate(inflater)
 
-
+        exitTransition = MaterialElevationScale(true).apply {
+            duration = 2000L
+        }
+        reenterTransition = MaterialElevationScale(false).apply {
+            duration = 2000L
+        }
 
         binding.listHor.adapter =
                 MoviesAdapter(getDummyMoviesList1(), MoviesAdapter.ListOrientation.HORIZONTAL, this)
@@ -38,12 +43,7 @@ class MoviesList : Fragment(), MoviesAdapter.Interaction {
     }
 
     override fun onItemSelected(item: Movie, view: View) {
-        exitTransition = MaterialElevationScale(true).apply {
-            duration = 2000L
-        }
-        reenterTransition = MaterialElevationScale(false).apply {
-            duration = 2000L
-        }
+
         val bundle = bundleOf("movie" to item)
         Navigation.findNavController(requireView()).navigate(R.id.action_moviesList_to_movieDetails, bundle)
     }
